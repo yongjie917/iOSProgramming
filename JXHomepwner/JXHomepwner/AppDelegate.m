@@ -26,6 +26,11 @@
     // 将 JXItemsViewController 的标示图加入窗口
     self.window.rootViewController = itemsViewController;
     
+    // 将 UINavigationController 对象设置为 UIWindow 对象的根视图控制器。
+    // 这样就可以将 UINavigationController 对象的视图添加到屏幕中
+    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
+    self.window.rootViewController = navController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     
     [self.window makeKeyAndVisible];

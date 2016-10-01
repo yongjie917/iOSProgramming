@@ -9,6 +9,7 @@
 #import "JXItemsViewController.h"
 #import "JXItem.h"
 #import "JXItemStore.h"
+#import "JXDetailViewController.h"
 
 @interface JXItemsViewController ()
 /** 头部视图 */
@@ -27,16 +28,22 @@
     // 调用父类的指定初始化方法
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-        for (NSInteger i=0; i<15; i++) {
+        UINavigationItem * navItem = self.navigationItem;
+        navItem.title = @"JXHomepwner";
+        
+        for (NSInteger i=0; i<5; i++) {
             [[JXItemStore sharedStore] createItem];
         }
     }
     return self;
 }
 
-- (instancetype)initWithStyle:(UITableViewStyle)style {
-    return [self init];
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -109,6 +116,18 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
     
     [[JXItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row
                                        toIndex:destinationIndexPath.row];
+}
+
+#pragma mark - UITalbeViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    JXDetailViewController * detailController = [[JXDetailViewController alloc] init];
+    
+    NSArray * items = [[JXItemStore sharedStore] allItem];
+    JXItem * selectedItem = items[indexPath.row];
+    // 将选中的JXItem 对象赋给 DetailViewController 对象
+    detailController.item = selectedItem;
+    // 将新创建的控制器压入到导航控制器对象栈中
+    [self.navigationController pushViewController:detailController animated:YES];
 }
 
 #pragma mark - 懒加载
@@ -185,6 +204,8 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
     NSIndexPath * indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
     
     // 将新航插入 UITableView 对象
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
+    
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
 }
 @end
