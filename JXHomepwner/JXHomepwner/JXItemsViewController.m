@@ -31,6 +31,16 @@
         UINavigationItem * navItem = self.navigationItem;
         navItem.title = @"JXHomepwner";
         
+        // 创建新的 UIBarButtonItem 对象
+        // 将其目标对象设置为当前对象，将其多做方法设置为指定方法
+        UIBarButtonItem * bdi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addClick:)];
+        // 为 UINavigationItem 对象的 rightBarButtonItem 属性赋值
+        // 指向新创建的 UIBarButtonItem 对象
+        navItem.rightBarButtonItem = bdi;
+        
+        UIBarButtonItem * edit = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editClick:)];
+        navItem.leftBarButtonItem = edit;
+        
         for (NSInteger i=0; i<5; i++) {
             [[JXItemStore sharedStore] createItem];
         }
@@ -53,7 +63,7 @@
 
     
     // 加载头视图
-    [self headerView];
+//    [self headerView];
 }
 
 #pragma mark - Table view data source
@@ -170,18 +180,18 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 }
 
 #pragma mark - 点击事件
-- (void)editClick:(UIButton *)sender {
+- (void)editClick:(UIBarButtonItem *)sender {
     if (self.isEditing) { // 如果是编辑状态，取消编辑
         
         // 更改文字
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+//        [sender setTitle:@"Edit" forState:UIControlStateNormal];
         
         // 取消编辑
         [self setEditing:NO animated:YES];
     } else {
         
         // 更改文字
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
+//        [sender setTitle:@"Done" forState:UIControlStateNormal];
         
         // 开始编辑
         [self setEditing:YES animated:YES];
