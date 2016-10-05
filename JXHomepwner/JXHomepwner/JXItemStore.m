@@ -8,6 +8,7 @@
 
 #import "JXItemStore.h"
 #import "JXItem.h"
+#import "JXImageStore.h"
 
 @interface JXItemStore ()
 
@@ -51,6 +52,7 @@
     
     [self.privateItems removeObjectIdenticalTo:item];
     
+    [[JXImageStore sharedStore] deleteImageForKey:item.itemKey];
 }
 
 

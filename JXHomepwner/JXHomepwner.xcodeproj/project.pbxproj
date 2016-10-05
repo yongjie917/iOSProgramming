@@ -20,6 +20,7 @@
 		2626B3161D980B2B00A39C89 /* JXItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2626B3151D980B2B00A39C89 /* JXItemStore.m */; };
 		26F75CE61DA0001D00A045E4 /* JXDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F75CE41DA0001D00A045E4 /* JXDetailViewController.m */; };
 		26F75CE71DA0001D00A045E4 /* JXDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26F75CE51DA0001D00A045E4 /* JXDetailViewController.xib */; };
+		26F75D421DA4B4F600A045E4 /* JXImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F75D411DA4B4F600A045E4 /* JXImageStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		26F75CE31DA0001D00A045E4 /* JXDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXDetailViewController.h; sourceTree = "<group>"; };
 		26F75CE41DA0001D00A045E4 /* JXDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXDetailViewController.m; sourceTree = "<group>"; };
 		26F75CE51DA0001D00A045E4 /* JXDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JXDetailViewController.xib; sourceTree = "<group>"; };
+		26F75D401DA4B4F600A045E4 /* JXImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXImageStore.h; sourceTree = "<group>"; };
+		26F75D411DA4B4F600A045E4 /* JXImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				2626B3121D980A3000A39C89 /* JXItem.m */,
 				2626B3141D980B2B00A39C89 /* JXItemStore.h */,
 				2626B3151D980B2B00A39C89 /* JXItemStore.m */,
+				26F75D401DA4B4F600A045E4 /* JXImageStore.h */,
+				26F75D411DA4B4F600A045E4 /* JXImageStore.m */,
 				2626B2E41D9800E900A39C89 /* Main.storyboard */,
 				2626B2E71D9800E900A39C89 /* Assets.xcassets */,
 				2626B2E91D9800E900A39C89 /* LaunchScreen.storyboard */,
@@ -301,6 +306,7 @@
 				2626B3161D980B2B00A39C89 /* JXItemStore.m in Sources */,
 				2626B2E31D9800E900A39C89 /* ViewController.m in Sources */,
 				2626B3101D98052400A39C89 /* JXItemsViewController.m in Sources */,
+				26F75D421DA4B4F600A045E4 /* JXImageStore.m in Sources */,
 				2626B2E01D9800E900A39C89 /* AppDelegate.m in Sources */,
 				2626B2DD1D9800E900A39C89 /* main.m in Sources */,
 				2626B3131D980A3000A39C89 /* JXItem.m in Sources */,
